@@ -1,3 +1,11 @@
+import Header from "./components/Header";
+import Intro from "./components/Intro";
+
 export default function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="container mx-auto">
+      <Header />
+      <Intro />
+    </div>
+  );
 }
