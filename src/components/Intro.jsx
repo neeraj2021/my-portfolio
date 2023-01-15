@@ -13,8 +13,9 @@ const Intro = () => {
       </div>
       <div id="right">
         <div className="my-10">
-          <h1 className="text-6xl font-semibold">A Passionate</h1>
-          <h1 className="text-6xl font-semibold">Developer</h1>
+          <h1 className="text-6xl font-semibold">Hi, I'm Neeraj</h1>
+          <h1 className="text-4xl font-semibold">A Passionate Developer</h1>
+          {/* <h1 className="text-4xl font-semibold">Developer</h1> */}
         </div>
         <p className="w-1/2 my-8">
           A full stack software engineer with a strong attention to detail and a

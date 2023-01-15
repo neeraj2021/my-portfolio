@@ -18,7 +18,7 @@ import Backend from "../assets/Backend.png";
 
 const Specialities = () => {
   return (
-    <div className="py-16">
+    <div className="py-16 container mx-auto">
       <div className="grid grid-cols-[30%_70%]">
         <div className="flex gap-4">
           <span className="w-20 h-[2px] mt-5 bg-primary"></span>
