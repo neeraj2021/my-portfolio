@@ -7,7 +7,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase, faSchool } from "@fortawesome/free-solid-svg-icons";
 
-const WorkExperience = () => {
+function WorkExperience() {
   return (
     <div>
       <h2 className="text-3xl p-5 pb-0 flex justify-center font-semibold">
@@ -94,6 +94,6 @@ const WorkExperience = () => {
       </VerticalTimeline>
     </div>
   );
-};
+}
 
 export default WorkExperience;

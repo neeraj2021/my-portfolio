@@ -2,7 +2,7 @@ import React from "react";
 import FinanceProject from "../assets/FinanceProject.png";
 import ChatProject from "../assets/ChatProject.png";
 
-const Project = () => {
+function Project() {
   return (
     <div className="bg-primary w-full px-20 bg-dots">
       <div className="pt-6 pb-10">
@@ -82,6 +82,6 @@ const Project = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Project;

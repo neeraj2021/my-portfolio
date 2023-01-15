@@ -2,7 +2,7 @@ import React from "react";
 import TechNameIcon from "./TechNameIcon";
 import HtmlSvg from "../assets/HTML.svg";
 import CssSvg from "../assets/CSS.svg";
-import ReactSvg from "../assets/React.svg";
+import ReactSvg from "../assets/ReactJS.svg";
 import VueJSSvg from "../assets/VueJS.svg";
 import NestJSSvg from "../assets/NestJS.svg";
 import NodeJSSvg from "../assets/NodeJS.svg";
@@ -16,12 +16,12 @@ import SpecialitiesCard from "./SpecialitiesCard";
 import Frontend from "../assets/Frontend.png";
 import Backend from "../assets/Backend.png";
 
-const Specialities = () => {
+function Specialities() {
   return (
     <div className="py-16 container mx-auto">
       <div className="grid grid-cols-[30%_70%]">
         <div className="flex gap-4">
-          <span className="w-20 h-[2px] mt-5 bg-primary"></span>
+          <span className="w-20 h-[2px] mt-5 bg-primary" />
           <h1 className="text-4xl font-semibold">
             Meet My <br /> Technology
           </h1>
@@ -63,6 +63,6 @@ const Specialities = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Specialities;
