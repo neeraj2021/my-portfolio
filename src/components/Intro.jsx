@@ -15,18 +15,22 @@ function FollowMeOnLogo({ src, href, alt }) {
 
 function Intro() {
   return (
-    <div className="flex w-full upper-background bg-cover bg-bottom bg-no-repeat">
-      <div id="left" className="w-1/2 self-end h-96">
+    <div className="flex w-full upper-background bg-cover bg-bottom bg-no-repeat px-5 lg:px-0">
+      <div id="left" className="w-1/2 self-end h-96 hidden lg:block">
         <img src={Model} className="h-full mx-auto" alt="React logo" />
       </div>
 
       <div id="right">
-        <div className="my-10">
-          <h1 className="text-6xl font-semibold">Hi, I&apos;m Neeraj</h1>
-          <h1 className="text-4xl font-semibold">A Passionate Developer</h1>
+        <div className="my-5 lg:my-10">
+          <h1 className="text-4xl lg:text-6xl font-semibold">
+            Hi, I&apos;m Neeraj
+          </h1>
+          <h1 className="text-2xl lg:text-4xl font-semibold">
+            A Passionate Developer
+          </h1>
         </div>
 
-        <p className="w-1/2 my-8">
+        <p className="lg:w-1/2 my-4 lg:my-8">
           A full stack software engineer with a strong attention to detail and a
           dedication to quality
         </p>
@@ -43,7 +47,7 @@ function Intro() {
           </button>
         </div>
 
-        <div className="flex gap-6 mt-16 py-4 items-center flex-wrap">
+        <div className="flex gap-6 mt-4 lg:mt-16 py-4 items-center flex-wrap">
           <p className="font-medium text-xl">Follow me on </p>
           <FollowMeOnLogo src={LinkedinSvg} href={LinkedinUrl} alt="Linkedin" />
           <FollowMeOnLogo src={GithubSvg} href={GithubUrl} alt="Github" />

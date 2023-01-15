@@ -12,7 +12,7 @@ import { educationArr } from "../constants/education.ts";
 
 function ExperienceTitle({ title }) {
   return (
-    <h2 className="text-3xl p-5 pb-0 flex justify-center font-semibold">
+    <h2 className="text-2xl lg:text-3xl p-5 pb-0 flex justify-center font-semibold mb-4">
       {title}
     </h2>
   );
@@ -31,15 +31,22 @@ function WorkExperience() {
               borderRight: "10px solid  rgb(33, 150, 243)",
             }}
             date={work.date}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            iconStyle={{
+              background: "rgb(33, 150, 243)",
+              color: "#fff",
+            }}
             icon={<FontAwesomeIcon icon={work.icon} />}
             key={index}
           >
-            <h3 className="font-semibold text-2xl">{work.position}</h3>
+            <h3 className="font-semibold text-lg lg:text-2xl">
+              {work.position}
+            </h3>
 
             <div className="flex justify-between items-end pb-4">
-              <h3 className="font-semibold text-xl">{work.company}</h3>
-              <span className="text-sm">{work.location}</span>
+              <h3 className="font-semibold text-lg lg:text-xl">
+                {work.company}
+              </h3>
+              <span className="text-xs lg:text-sm">{work.location}</span>
             </div>
 
             {work.projects.map((project, projectIndex) => (
@@ -50,7 +57,9 @@ function WorkExperience() {
 
                 {project.details.map((detail, detailIndex) => (
                   <div key={detailIndex}>
-                    <h5 className="font-medium mt-3">{detail.subtitle}</h5>
+                    <h5 className="font-medium text-sm lg:text-base mt-3">
+                      {detail.subtitle}
+                    </h5>
 
                     {detail.points.map((point, pointIndex) => (
                       <div className="flex flex-row gap-2" key={pointIndex}>
@@ -58,7 +67,9 @@ function WorkExperience() {
                           icon={faCircle}
                           className="h-[5px] mt-[10px]"
                         />
-                        <span className="p-0 m-0 text-sm">{point}</span>
+                        <span className="p-0 m-0 lg:text-sm text-xs">
+                          {point}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -76,19 +87,25 @@ function WorkExperience() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work my-10"
             contentArrowStyle={{
-              borderRight: "10px solid  rgb(33, 150, 243)",
+              borderRight: "10px solid rgb(33, 150, 243)",
             }}
             date={education.date}
-            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            iconStyle={{
+              background: "rgb(33, 150, 243)",
+              color: "#fff",
+            }}
             icon={<FontAwesomeIcon icon={education.icon} />}
           >
-            <h3 className="font-semibold text-xl">{education.institute}</h3>
-            <h4>{education.location}</h4>
-            <p>{education.course}</p>
-            <p>{education.result}</p>
+            <h3 className="font-semibold text-lg lg:text-xl">
+              {education.institute}
+            </h3>
+            <h4 className="text-sm lg:text-base">{education.location}</h4>
+            <p className="text-sm lg:text-base">{education.course}</p>
+            <p className="text-sm lg:text-base">{education.result}</p>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
+      <VerticalTimeline lineColor="blue" />
     </div>
   );
 }

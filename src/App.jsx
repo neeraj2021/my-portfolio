@@ -4,6 +4,8 @@ import Specialities from "./components/Specialities";
 import Project from "./components/Project";
 import WorkExperience from "./components/WorkExperience";
 
+import "react-vertical-timeline-component/style.min.css";
+
 function App() {
   return (
     <>
