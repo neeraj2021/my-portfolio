@@ -16,7 +16,7 @@
 
   .bg-dots {
     background: white;
-    background-image: radial-gradient(#ffffff2e 1px, transparent 20%);
+    background-image: radial-gradient(#ffffff24 2px, transparent 20%);
     background-size: 40px 40px;
   }
 }

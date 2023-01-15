@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from "react";
 import {
   VerticalTimeline,
@@ -5,92 +6,88 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBriefcase, faSchool } from "@fortawesome/free-solid-svg-icons";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { workArr } from "../constants/work.ts";
+import { educationArr } from "../constants/education.ts";
+
+function ExperienceTitle({ title }) {
+  return (
+    <h2 className="text-3xl p-5 pb-0 flex justify-center font-semibold">
+      {title}
+    </h2>
+  );
+}
 
 function WorkExperience() {
   return (
     <div>
-      <h2 className="text-3xl p-5 pb-0 flex justify-center font-semibold">
-        Work Experience
-      </h2>
+      <ExperienceTitle title="Work Experience" />
 
       <VerticalTimeline animate={false}>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work my-10"
-          contentArrowStyle={{ borderRight: "10px solid  rgb(33, 150, 243)" }}
-          date="Jan 2022 - Present"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faBriefcase} />}
-        >
-          <h3 className="font-semibold text-xl">Field Assist</h3>
-          <h4>Gurgaon (Haryana)</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quis
-            maxime excepturi sit quo harum obcaecati ipsum quam quod facere!
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work my-10"
-          contentArrowStyle={{ borderRight: "10px solid  rgb(33, 150, 243)" }}
-          date="Aug 2021 - Jan 2022"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faSchool} />}
-        >
-          <h3 className="font-semibold text-xl">Sharp Quest</h3>
-          <h4>Ahmedabad (Gujrat)</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eos
-            illo quibusdam adipisci libero. Delectus a illum cumque quam
-            aliquid!
-          </p>
-        </VerticalTimelineElement>
+        {workArr.map((work, index) => (
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work my-10"
+            contentArrowStyle={{
+              borderRight: "10px solid  rgb(33, 150, 243)",
+            }}
+            date={work.date}
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<FontAwesomeIcon icon={work.icon} />}
+            key={index}
+          >
+            <h3 className="font-semibold text-2xl">{work.position}</h3>
+
+            <div className="flex justify-between items-end pb-4">
+              <h3 className="font-semibold text-xl">{work.company}</h3>
+              <span className="text-sm">{work.location}</span>
+            </div>
+
+            {work.projects.map((project, projectIndex) => (
+              <div className="pb-6" key={projectIndex}>
+                <h5 className="font-medium bg-gray-100 py-1">
+                  {project.title}
+                </h5>
+
+                {project.details.map((detail, detailIndex) => (
+                  <div key={detailIndex}>
+                    <h5 className="font-medium mt-3">{detail.subtitle}</h5>
+
+                    {detail.points.map((point, pointIndex) => (
+                      <div className="flex flex-row gap-2" key={pointIndex}>
+                        <FontAwesomeIcon
+                          icon={faCircle}
+                          className="h-[5px] mt-[10px]"
+                        />
+                        <span className="p-0 m-0 text-sm">{point}</span>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </VerticalTimelineElement>
+        ))}
       </VerticalTimeline>
 
-      <h2 className="text-3xl p-5 pb-0 flex justify-center font-semibold">
-        Education
-      </h2>
+      <ExperienceTitle title="Education" />
 
       <VerticalTimeline animate={false}>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work my-10"
-          contentArrowStyle={{ borderRight: "10px solid  rgb(33, 150, 243)" }}
-          date="Jul 2017 - Jun 2021"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faBriefcase} />}
-        >
-          <h3 className="font-semibold text-xl">
-            Indian Institute Of Technology (IIT ISM), Dhanbad
-          </h3>
-          <h4>Dhanbad (Jharkhand)</h4>
-          <p>Bachelor of Technology In Mechanical Engineering</p>
-          <p>CGPA - 7.62 / 10</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work my-10"
-          contentArrowStyle={{ borderRight: "10px solid  rgb(33, 150, 243)" }}
-          date="Jul 2015 - May 2016"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faSchool} />}
-        >
-          <h3 className="font-semibold text-xl">Raja Public School</h3>
-          <h4>Dausa (Rajasthan)</h4>
-          <p>RBSE Senior Secondary (12th Board)</p>
-          <p>Percentage - 82%</p>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work my-10"
-          contentArrowStyle={{ borderRight: "10px solid  rgb(33, 150, 243)" }}
-          date="Jul 2015 - May 2016"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FontAwesomeIcon icon={faSchool} />}
-        >
-          <h3 className="font-semibold text-xl">Raja Public School</h3>
-          <h4>Dausa (Rajasthan)</h4>
-          <p>RBSE Secondary (10th Board)</p>
-          <p>Percentage - 91%</p>
-        </VerticalTimelineElement>
+        {educationArr.map((education) => (
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work my-10"
+            contentArrowStyle={{
+              borderRight: "10px solid  rgb(33, 150, 243)",
+            }}
+            date={education.date}
+            iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+            icon={<FontAwesomeIcon icon={education.icon} />}
+          >
+            <h3 className="font-semibold text-xl">{education.institute}</h3>
+            <h4>{education.location}</h4>
+            <p>{education.course}</p>
+            <p>{education.result}</p>
+          </VerticalTimelineElement>
+        ))}
       </VerticalTimeline>
     </div>
   );
