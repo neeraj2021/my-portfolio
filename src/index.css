@@ -12,7 +12,13 @@
     border-radius: 0.75rem;
   }
 
-  .upperBackground {
+  .upper-background {
     background-image: url("./assets/UpperBackground.png");
+  }
+
+  .bg-dots {
+    background: white;
+    background-image: radial-gradient(#ffffff2e 1px, transparent 20%);
+    background-size: 40px 40px;
   }
 }

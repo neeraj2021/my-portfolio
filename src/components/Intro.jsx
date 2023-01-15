@@ -7,7 +7,7 @@ import { LinkedinUrl, GithubUrl, MediumUrl } from "../constants";
 
 const Intro = () => {
   return (
-    <div className="flex w-full upperBackground bg-cover bg-bottom bg-no-repeat">
+    <div className="flex w-full upper-background bg-cover bg-bottom bg-no-repeat">
       <div id="left" className="w-1/2 self-end h-96">
         <img src={Model} className="h-full mx-auto" alt="React logo" />
       </div>

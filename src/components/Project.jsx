@@ -4,7 +4,7 @@ import ChatProject from "../assets/ChatProject.png";
 
 const Project = () => {
   return (
-    <div className="bg-primary w-full px-20">
+    <div className="bg-primary w-full px-20 bg-dots">
       <div className="pt-6 pb-10">
         <h3 className="text-white text-4xl font-semibold">
           Take a look at <br /> My recent Projects
