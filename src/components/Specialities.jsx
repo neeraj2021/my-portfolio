@@ -17,7 +17,7 @@ import Backend from "../assets/Backend.png";
 function TechNameIcon({ src, title }) {
   return (
     <div className="flex items-center gap-2 bg-cream p-2">
-      <img src={src} className="h-5 w-5" alt="vjdknv kjdnkj ndkj nkjfd" />
+      <img loading="lazy" src={src} className="h-5 w-5" alt="vjdknv kjdnkj ndkj nkjfd" />
       <span className="font-semibold text-lg">{title}</span>
     </div>
   );
@@ -26,25 +26,25 @@ function TechNameIcon({ src, title }) {
 function SpecialitiesCard({ iconSrc, title, description }) {
   return (
     <div className="bg-cream w-80 p-10 flex flex-col gap-y-3 shadow-md">
-      <img src={iconSrc} className="h-7 w-7" alt="img" />
-      <h1 className="lg:text-2xl text-lg font-semibold">{title}</h1>
-      <p className="text-sm lg:text-base">{description}</p>
+      <img loading="lazy" src={iconSrc} className="h-7 w-7" alt="img" />
+      <h1 className="md:text-2xl text-lg font-semibold">{title}</h1>
+      <p className="text-sm md:text-base">{description}</p>
     </div>
   );
 }
 
 function Specialities() {
   return (
-    <div className="lg:py-16 p-5 lg:px-0 container mx-auto">
-      <div className="grid lg:grid-cols-[30%_70%] py-4">
+    <div className="md:py-16 p-5 md:px-0 container mx-auto">
+      <div className="grid md:grid-cols-[30%_70%] py-4">
         <div className="flex gap-4">
-          <span className="w-20 h-[2px] mt-5 bg-primary hidden lg:inline" />
-          <h1 className="text-2xl lg:text-4xl font-semibold mx-auto lg:mx-0">
-            Meet My <br className="hidden lg:inline" /> Technology
+          <span className="w-20 h-[2px] mt-5 bg-primary hidden md:inline" />
+          <h1 className="text-2xl md:text-4xl font-semibold mx-auto md:mx-0">
+            Meet My <br className="hidden md:inline" /> Technology
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-3 lg:mt-0">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-3 md:mt-0">
           <TechNameIcon src={ReactSvg} title="React" />
           <TechNameIcon src={VueJSSvg} title="Vue" />
           <TechNameIcon src={NextJSSVG} title="NextJS" />
@@ -61,10 +61,10 @@ function Specialities() {
       </div>
 
       <div className="flex flex-col justify-center items-center">
-        <h2 className="text-2xl lg:text-4xl pt-5 pb-2 font-semibold">
+        <h2 className="text-2xl md:text-4xl pt-5 pb-2 font-semibold">
           Specialities
         </h2>
-        <p className="lg:w-1/3 text-center">
+        <p className="md:w-1/3 text-center">
           Allow me to highlight my specific areas of expertise. 💻
         </p>
       </div>

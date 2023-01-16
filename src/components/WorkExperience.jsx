@@ -12,7 +12,7 @@ import { educationArr } from "../constants/education.ts";
 
 function ExperienceTitle({ title }) {
   return (
-    <h2 className="text-2xl lg:text-3xl p-5 pb-0 flex justify-center font-semibold mb-4">
+    <h2 className="text-2xl md:text-3xl p-5 pb-0 flex justify-center font-semibold mb-4">
       {title}
     </h2>
   );
@@ -23,7 +23,7 @@ function WorkExperience() {
     <div>
       <ExperienceTitle title="Work Experience" />
 
-      <VerticalTimeline animate={false}>
+      <VerticalTimeline>
         {workArr.map((work, index) => (
           <VerticalTimelineElement
             className="vertical-timeline-element--work my-10"
@@ -38,15 +38,15 @@ function WorkExperience() {
             icon={<FontAwesomeIcon icon={work.icon} />}
             key={index}
           >
-            <h3 className="font-semibold text-lg lg:text-2xl">
+            <h3 className="font-semibold text-lg md:text-2xl">
               {work.position}
             </h3>
 
             <div className="flex justify-between items-end pb-4">
-              <h3 className="font-semibold text-lg lg:text-xl">
+              <h3 className="font-semibold text-lg md:text-xl">
                 {work.company}
               </h3>
-              <span className="text-xs lg:text-sm">{work.location}</span>
+              <span className="text-xs md:text-sm">{work.location}</span>
             </div>
 
             {work.projects.map((project, projectIndex) => (
@@ -57,7 +57,7 @@ function WorkExperience() {
 
                 {project.details.map((detail, detailIndex) => (
                   <div key={detailIndex}>
-                    <h5 className="font-medium text-sm lg:text-base mt-3">
+                    <h5 className="font-medium text-sm md:text-base mt-3">
                       {detail.subtitle}
                     </h5>
 
@@ -67,7 +67,7 @@ function WorkExperience() {
                           icon={faCircle}
                           className="h-[5px] mt-[10px]"
                         />
-                        <span className="p-0 m-0 lg:text-sm text-xs">
+                        <span className="p-0 m-0 md:text-sm text-xs">
                           {point}
                         </span>
                       </div>
@@ -82,7 +82,7 @@ function WorkExperience() {
 
       <ExperienceTitle title="Education" />
 
-      <VerticalTimeline animate={false}>
+      <VerticalTimeline>
         {educationArr.map((education) => (
           <VerticalTimelineElement
             className="vertical-timeline-element--work my-10"
@@ -96,12 +96,12 @@ function WorkExperience() {
             }}
             icon={<FontAwesomeIcon icon={education.icon} />}
           >
-            <h3 className="font-semibold text-lg lg:text-xl">
+            <h3 className="font-semibold text-lg md:text-xl">
               {education.institute}
             </h3>
-            <h4 className="text-sm lg:text-base">{education.location}</h4>
-            <p className="text-sm lg:text-base">{education.course}</p>
-            <p className="text-sm lg:text-base">{education.result}</p>
+            <h4 className="text-sm md:text-base">{education.location}</h4>
+            <p className="text-sm md:text-base">{education.course}</p>
+            <p className="text-sm md:text-base">{education.result}</p>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
