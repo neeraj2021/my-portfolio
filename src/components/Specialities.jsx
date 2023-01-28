@@ -13,11 +13,17 @@ import TypescriptSvg from "../assets/Typescript.svg";
 import TailwindCSSSvg from "../assets/TailwindCSS.svg";
 import Frontend from "../assets/Frontend.png";
 import Backend from "../assets/Backend.png";
+import { getExperience } from "../constants/date.ts";
 
 function TechNameIcon({ src, title }) {
   return (
     <div className="flex items-center gap-2 bg-cream p-2">
-      <img loading="lazy" src={src} className="h-5 w-5" alt="vjdknv kjdnkj ndkj nkjfd" />
+      <img
+        loading="lazy"
+        src={src}
+        className="h-5 w-5"
+        alt="vjdknv kjdnkj ndkj nkjfd"
+      />
       <span className="font-semibold text-lg">{title}</span>
     </div>
   );
@@ -73,13 +79,15 @@ function Specialities() {
         <SpecialitiesCard
           iconSrc={Frontend}
           title="Front End Developer"
-          description="As a Front-End Developer with over a year of experience, I specialize in using technologies such as ReactJS and Vue to develop websites."
+          description={`As a Front-End Developer with over ${getExperience(
+            "2021-07-25"
+          )} of experience, I specialize in using technologies such as ReactJS and Vue to develop websites.`}
         />
 
         <SpecialitiesCard
           iconSrc={Backend}
           title="Back End Developer"
-          description="As a Back-End Developer with over 3 months of experience, I have a strong proficiency in utilizing NodeJS and NestJS to manage and develop robust, efficient and scalable back-end systems and APIs."
+          description={`As a Back-End Developer with over ${getExperience('2022-07-01')} of experience, I have a strong proficiency in utilizing NodeJS and NestJS to manage and develop robust, efficient and scalable back-end systems and APIs.`}
         />
       </div>
     </div>

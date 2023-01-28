@@ -1,10 +1,28 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-array-index-key */
 import React from "react";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { projectArr } from "../constants/project";
+import GithubSvg from "../assets/Github.svg";
+
+export function GithubLink({ src, href, alt }) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer">
+      <img loading="lazy" src={src} className="w-4 h-4" alt={alt} />
+    </a>
+  );
+}
 
 function ProjectItem({ project, swap }) {
+  const handleClick = (link) => {
+    if (link) {
+      // eslint-disable-next-line no-undef
+      window.open(project.link);
+    }
+  };
+
   return (
     <div
       className={`text-white md:flex gap-8 pb-4 items-center ${
@@ -16,7 +34,24 @@ function ProjectItem({ project, swap }) {
       </div>
 
       <div>
-        <h4 className="text-xl md:text-2xl font-semibold">{project.title}</h4>
+        <h4 className="text-xl md:text-2xl font-semibold flex gap-x-2 items-center">
+          <span
+            className={`${project.link ? "underline cursor-pointer" : ""}`}
+            onClick={() => handleClick(project.link)}
+          >
+            {project.title}
+          </span>
+          <GithubLink
+            src={GithubSvg}
+            href={project.github_server}
+            alt="Github"
+          />
+          <GithubLink
+            src={GithubSvg}
+            href={project.github_client}
+            alt="Github"
+          />
+        </h4>
         {project.details.map((item, index) => (
           <div key={index}>
             <h5 className="text-lg md:text-xl font-medium mt-3">

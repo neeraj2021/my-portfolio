@@ -5,6 +5,9 @@ import ChatProject from "../assets/ChatProject.png";
 export const projectArr = [
   {
     title: "FINANCE MANAGE WEBSITE",
+    link: 'https://finance-chi.vercel.app/',
+    github_server: 'https://github.com/neeraj2021/nestjs-finance-server',
+    github_client: 'https://github.com/neeraj2021/next-finance-client',
     details: [
       {
         title: "Backend",
@@ -31,6 +34,8 @@ export const projectArr = [
   },
   {
     title: "WEB CHAT APPLICATION",
+    github_server: 'https://github.com/neeraj2021/nestjs_chat_app_server',
+    github_client: 'https://github.com/neeraj2021/nextjs_chat_app_client',
     details: [
       {
         title: "Backend",
